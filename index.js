@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { Component } from 'react';
 import { View, PanResponder } from 'react-native';
 
@@ -31,6 +29,7 @@ class GestureRecognizer extends Component {
   constructor(props, context) {
     super(props, context);
     this.swipeConfig = Object.assign(swipeConfig, props.config);
+    this._validateSwipe = this._validateSwipe.bind(this);
   }
 
   componentWillReceiveProps(props) {
@@ -52,7 +51,25 @@ class GestureRecognizer extends Component {
   _handleShouldSetPanResponder(evt, gestureState) {
     return (
       evt.nativeEvent.touches.length === 1 &&
-      !this._gestureIsClick(gestureState)
+      !this._gestureIsClick(gestureState) &&
+      this._validateSwipe(gestureState)
+    );
+  }
+
+  _validateSwipe(gestureState) {
+    const {
+      detectSwipeUp,
+      detectSwipeDown,
+      detectSwipeLeft,
+      detectSwipeRight,
+    } = this.swipeConfig;
+    const swipeDirection = this._getSwipeDirection(gestureState);
+    const { SWIPE_LEFT, SWIPE_RIGHT, SWIPE_UP, SWIPE_DOWN } = swipeDirections;
+    return (
+      (detectSwipeUp && swipeDirection === SWIPE_UP) ||
+      (detectSwipeDown && swipeDirection === SWIPE_DOWN) ||
+      (detectSwipeLeft && swipeDirection === SWIPE_LEFT) ||
+      (detectSwipeRight && swipeDirection === SWIPE_RIGHT)
     );
   }
 
