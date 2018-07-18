@@ -3,9 +3,10 @@
   "version": "1.0.2",
   "description": "4-directional swipe gestures for react-native",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier **/*.{js,json,md} --write",
+    "format": "prettier **/*.{js,json,md,ts} --write",
     "precommit": "yarn format"
   },
   "repository": {
