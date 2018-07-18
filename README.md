@@ -95,14 +95,14 @@ export default SomeComponent;
 
 Can be passed within optional `config` property.
 
-| Params                     |  Type  | Default | Description                                                                                                               |
-| -------------------------- | :----: | ------- | ------------------------------------------------------------------------------------------------------------------------- |
-| velocityThreshold          | Number | 0.3     | Velocity that has to be breached in order for swipe to be triggered (`vx` and `vy` peroperties of `gestureState`)         |
-| directionalOffsetThreshold | Number | 80      | Absolute offset that shouldn't be breached for swipe to be triggered (`dy` for horizontal swipe, `dx` for vertical swipe) |
-| detectSwipeUp          | Boolean        | true     | enable/disable swipe up gesture detection |
-| detectSwipeDown          | Boolean        | true     | enable/disable swipe down gesture detection |
-| detectSwipeLeft         | Boolean        | true     | enable/disable swipe left gesture detection |
-| detectSwipeRight          | Boolean        | true     | enable/disable swipe right gesture detection |
+| Params                     |  Type   | Default | Description                                                                                                               |
+| -------------------------- | :-----: | ------- | ------------------------------------------------------------------------------------------------------------------------- |
+| velocityThreshold          | Number  | 0.3     | Velocity that has to be breached in order for swipe to be triggered (`vx` and `vy` peroperties of `gestureState`)         |
+| directionalOffsetThreshold | Number  | 80      | Absolute offset that shouldn't be breached for swipe to be triggered (`dy` for horizontal swipe, `dx` for vertical swipe) |
+| detectSwipeUp              | Boolean | true    | enable/disable swipe up gesture detection                                                                                 |
+| detectSwipeDown            | Boolean | true    | enable/disable swipe down gesture detection                                                                               |
+| detectSwipeLeft            | Boolean | true    | enable/disable swipe left gesture detection                                                                               |
+| detectSwipeRight           | Boolean | true    | enable/disable swipe right gesture detection                                                                              |
 
 ## Methods
 
